@@ -15,58 +15,58 @@
 
 ==============================================================================*/
 
-// OsirixLib Logic includes
-#include <vtkSlicerOsirixLibLogic.h>
+// OsirixROIImporter Logic includes
+#include <vtkSlicerOsirixROIImporterLogic.h>
 
-// OsirixLib includes
-#include "qSlicerOsirixLibModule.h"
-#include "qSlicerOsirixLibModuleWidget.h"
+// OsirixROIImporter includes
+#include "qSlicerOsirixROIImporterModule.h"
+#include "qSlicerOsirixROIImporterModuleWidget.h"
 
 //-----------------------------------------------------------------------------
 /// \ingroup Slicer_QtModules_ExtensionTemplate
-class qSlicerOsirixLibModulePrivate
+class qSlicerOsirixROIImporterModulePrivate
 {
 public:
-  qSlicerOsirixLibModulePrivate();
+  qSlicerOsirixROIImporterModulePrivate();
 };
 
 //-----------------------------------------------------------------------------
-// qSlicerOsirixLibModulePrivate methods
+// qSlicerOsirixROIImporterModulePrivate methods
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModulePrivate::qSlicerOsirixLibModulePrivate()
+qSlicerOsirixROIImporterModulePrivate::qSlicerOsirixROIImporterModulePrivate()
 {
 }
 
 //-----------------------------------------------------------------------------
-// qSlicerOsirixLibModule methods
+// qSlicerOsirixROIImporterModule methods
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModule::qSlicerOsirixLibModule(QObject* _parent)
+qSlicerOsirixROIImporterModule::qSlicerOsirixROIImporterModule(QObject* _parent)
   : Superclass(_parent)
-  , d_ptr(new qSlicerOsirixLibModulePrivate)
+  , d_ptr(new qSlicerOsirixROIImporterModulePrivate)
 {
 }
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModule::~qSlicerOsirixLibModule()
+qSlicerOsirixROIImporterModule::~qSlicerOsirixROIImporterModule()
 {
 }
 
 //-----------------------------------------------------------------------------
-QString qSlicerOsirixLibModule::helpText() const
+QString qSlicerOsirixROIImporterModule::helpText() const
 {
   return "This is a loadable module that can be bundled in an extension";
 }
 
 //-----------------------------------------------------------------------------
-QString qSlicerOsirixLibModule::acknowledgementText() const
+QString qSlicerOsirixROIImporterModule::acknowledgementText() const
 {
   return "This work was partially funded by NIH grant NXNNXXNNNNNN-NNXN";
 }
 
 //-----------------------------------------------------------------------------
-QStringList qSlicerOsirixLibModule::contributors() const
+QStringList qSlicerOsirixROIImporterModule::contributors() const
 {
   QStringList moduleContributors;
   moduleContributors << QString("John Doe (AnyWare Corp.)");
@@ -74,38 +74,38 @@ QStringList qSlicerOsirixLibModule::contributors() const
 }
 
 //-----------------------------------------------------------------------------
-QIcon qSlicerOsirixLibModule::icon() const
+QIcon qSlicerOsirixROIImporterModule::icon() const
 {
-  return QIcon(":/Icons/OsirixLib.png");
+  return QIcon(":/Icons/OsirixROIImporter.png");
 }
 
 //-----------------------------------------------------------------------------
-QStringList qSlicerOsirixLibModule::categories() const
+QStringList qSlicerOsirixROIImporterModule::categories() const
 {
   return QStringList() << "Examples";
 }
 
 //-----------------------------------------------------------------------------
-QStringList qSlicerOsirixLibModule::dependencies() const
+QStringList qSlicerOsirixROIImporterModule::dependencies() const
 {
   return QStringList();
 }
 
 //-----------------------------------------------------------------------------
-void qSlicerOsirixLibModule::setup()
+void qSlicerOsirixROIImporterModule::setup()
 {
   this->Superclass::setup();
 }
 
 //-----------------------------------------------------------------------------
-qSlicerAbstractModuleRepresentation* qSlicerOsirixLibModule
+qSlicerAbstractModuleRepresentation* qSlicerOsirixROIImporterModule
 ::createWidgetRepresentation()
 {
-  return new qSlicerOsirixLibModuleWidget;
+  return new qSlicerOsirixROIImporterModuleWidget;
 }
 
 //-----------------------------------------------------------------------------
-vtkMRMLAbstractLogic* qSlicerOsirixLibModule::createLogic()
+vtkMRMLAbstractLogic* qSlicerOsirixROIImporterModule::createLogic()
 {
-  return vtkSlicerOsirixLibLogic::New();
+  return vtkSlicerOsirixROIImporterLogic::New();
 }

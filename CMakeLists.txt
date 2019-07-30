@@ -10,7 +10,7 @@ set(EXTENSION_CONTRIBUTORS "Adam Rankin (Robarts Research Institute)")
 set(EXTENSION_DESCRIPTION "This extension facilities data transfer from Osirix into Slicer")
 set(EXTENSION_ICONURL "http://www.example.com/Slicer/Extensions/SlicerOsirix.png")
 set(EXTENSION_SCREENSHOTURLS "http://www.example.com/Slicer/Extensions/SlicerOsirix/Screenshots/1.png")
-set(EXTENSION_DEPENDS "NA") # Specified as a space separated string, a list or 'NA' if any
+set(EXTENSION_DEPENDS "SlicerRT") # Specified as a space separated string, a list or 'NA' if any
 
 #-----------------------------------------------------------------------------
 # Extension dependencies
@@ -19,7 +19,7 @@ include(${Slicer_USE_FILE})
 
 #-----------------------------------------------------------------------------
 # Extension modules
-add_subdirectory(OsirixLib)
+add_subdirectory(OsirixROIImporter)
 ## NEXT_MODULE
 
 #-----------------------------------------------------------------------------

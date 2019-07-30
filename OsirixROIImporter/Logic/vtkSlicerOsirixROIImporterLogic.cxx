@@ -16,7 +16,7 @@
 ==============================================================================*/
 
 // OsirixLib Logic includes
-#include "vtkSlicerOsirixLibLogic.h"
+#include "vtkSlicerOsirixROIImporterLogic.h"
 
 // MRML includes
 #include <vtkMRMLScene.h>
@@ -30,26 +30,26 @@
 #include <cassert>
 
 //----------------------------------------------------------------------------
-vtkStandardNewMacro(vtkSlicerOsirixLibLogic);
+vtkStandardNewMacro(vtkSlicerOsirixROIImporterLogic);
 
 //----------------------------------------------------------------------------
-vtkSlicerOsirixLibLogic::vtkSlicerOsirixLibLogic()
+vtkSlicerOsirixROIImporterLogic::vtkSlicerOsirixROIImporterLogic()
 {
 }
 
 //----------------------------------------------------------------------------
-vtkSlicerOsirixLibLogic::~vtkSlicerOsirixLibLogic()
+vtkSlicerOsirixROIImporterLogic::~vtkSlicerOsirixROIImporterLogic()
 {
 }
 
 //----------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic::PrintSelf(ostream& os, vtkIndent indent)
+void vtkSlicerOsirixROIImporterLogic::PrintSelf(ostream& os, vtkIndent indent)
 {
   this->Superclass::PrintSelf(os, indent);
 }
 
 //---------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic::SetMRMLSceneInternal(vtkMRMLScene * newScene)
+void vtkSlicerOsirixROIImporterLogic::SetMRMLSceneInternal(vtkMRMLScene* newScene)
 {
   vtkNew<vtkIntArray> events;
   events->InsertNextValue(vtkMRMLScene::NodeAddedEvent);
@@ -59,25 +59,25 @@ void vtkSlicerOsirixLibLogic::SetMRMLSceneInternal(vtkMRMLScene * newScene)
 }
 
 //-----------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic::RegisterNodes()
+void vtkSlicerOsirixROIImporterLogic::RegisterNodes()
 {
   assert(this->GetMRMLScene() != 0);
 }
 
 //---------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic::UpdateFromMRMLScene()
+void vtkSlicerOsirixROIImporterLogic::UpdateFromMRMLScene()
 {
   assert(this->GetMRMLScene() != 0);
 }
 
 //---------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic
+void vtkSlicerOsirixROIImporterLogic
 ::OnMRMLSceneNodeAdded(vtkMRMLNode* vtkNotUsed(node))
 {
 }
 
 //---------------------------------------------------------------------------
-void vtkSlicerOsirixLibLogic
+void vtkSlicerOsirixROIImporterLogic
 ::OnMRMLSceneNodeRemoved(vtkMRMLNode* vtkNotUsed(node))
 {
 }

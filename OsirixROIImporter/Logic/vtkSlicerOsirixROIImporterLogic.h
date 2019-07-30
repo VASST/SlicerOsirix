@@ -15,14 +15,14 @@
 
 ==============================================================================*/
 
-// .NAME vtkSlicerOsirixLibLogic - slicer logic class for volumes manipulation
+// .NAME vtkSlicerOsirixROIImporterLogic - slicer logic class for volumes manipulation
 // .SECTION Description
 // This class manages the logic associated with reading, saving,
 // and changing propertied of the volumes
 
 
-#ifndef __vtkSlicerOsirixLibLogic_h
-#define __vtkSlicerOsirixLibLogic_h
+#ifndef __vtkSlicerOsirixROIImporterLogic_h
+#define __vtkSlicerOsirixROIImporterLogic_h
 
 // Slicer includes
 #include "vtkSlicerModuleLogic.h"
@@ -32,22 +32,22 @@
 // STD includes
 #include <cstdlib>
 
-#include "vtkSlicerOsirixLibModuleLogicExport.h"
+#include "vtkSlicerOsirixROIImporterModuleLogicExport.h"
 
 
 /// \ingroup Slicer_QtModules_ExtensionTemplate
-class VTK_SLICER_OSIRIXLIB_MODULE_LOGIC_EXPORT vtkSlicerOsirixLibLogic :
+class VTK_SLICER_OSIRIXROIIMPORTER_MODULE_LOGIC_EXPORT vtkSlicerOsirixROIImporterLogic :
   public vtkSlicerModuleLogic
 {
 public:
 
-  static vtkSlicerOsirixLibLogic *New();
-  vtkTypeMacro(vtkSlicerOsirixLibLogic, vtkSlicerModuleLogic);
+  static vtkSlicerOsirixROIImporterLogic* New();
+  vtkTypeMacro(vtkSlicerOsirixROIImporterLogic, vtkSlicerModuleLogic);
   void PrintSelf(ostream& os, vtkIndent indent);
 
 protected:
-  vtkSlicerOsirixLibLogic();
-  virtual ~vtkSlicerOsirixLibLogic();
+  vtkSlicerOsirixROIImporterLogic();
+  virtual ~vtkSlicerOsirixROIImporterLogic();
 
   virtual void SetMRMLSceneInternal(vtkMRMLScene* newScene);
   /// Register MRML Node classes to Scene. Gets called automatically when the MRMLScene is attached to this logic class.
@@ -57,8 +57,8 @@ protected:
   virtual void OnMRMLSceneNodeRemoved(vtkMRMLNode* node);
 private:
 
-  vtkSlicerOsirixLibLogic(const vtkSlicerOsirixLibLogic&); // Not implemented
-  void operator=(const vtkSlicerOsirixLibLogic&); // Not implemented
+  vtkSlicerOsirixROIImporterLogic(const vtkSlicerOsirixROIImporterLogic&); // Not implemented
+  void operator=(const vtkSlicerOsirixROIImporterLogic&); // Not implemented
 };
 
 #endif

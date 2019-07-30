@@ -19,44 +19,44 @@
 #include <QDebug>
 
 // SlicerQt includes
-#include "qSlicerOsirixLibModuleWidget.h"
-#include "ui_qSlicerOsirixLibModuleWidget.h"
+#include "qSlicerOsirixROIImporterModuleWidget.h"
+#include "ui_qSlicerOsirixROIImporterModuleWidget.h"
 
 //-----------------------------------------------------------------------------
 /// \ingroup Slicer_QtModules_ExtensionTemplate
-class qSlicerOsirixLibModuleWidgetPrivate: public Ui_qSlicerOsirixLibModuleWidget
+class qSlicerOsirixROIImporterModuleWidgetPrivate: public Ui_qSlicerOsirixROIImporterModuleWidget
 {
 public:
-  qSlicerOsirixLibModuleWidgetPrivate();
+  qSlicerOsirixROIImporterModuleWidgetPrivate();
 };
 
 //-----------------------------------------------------------------------------
-// qSlicerOsirixLibModuleWidgetPrivate methods
+// qSlicerOsirixROIImporterModuleWidgetPrivate methods
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModuleWidgetPrivate::qSlicerOsirixLibModuleWidgetPrivate()
+qSlicerOsirixROIImporterModuleWidgetPrivate::qSlicerOsirixROIImporterModuleWidgetPrivate()
 {
 }
 
 //-----------------------------------------------------------------------------
-// qSlicerOsirixLibModuleWidget methods
+// qSlicerOsirixROIImporterModuleWidget methods
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModuleWidget::qSlicerOsirixLibModuleWidget(QWidget* _parent)
-  : Superclass( _parent )
-  , d_ptr( new qSlicerOsirixLibModuleWidgetPrivate )
+qSlicerOsirixROIImporterModuleWidget::qSlicerOsirixROIImporterModuleWidget(QWidget* _parent)
+  : Superclass(_parent)
+  , d_ptr(new qSlicerOsirixROIImporterModuleWidgetPrivate)
 {
 }
 
 //-----------------------------------------------------------------------------
-qSlicerOsirixLibModuleWidget::~qSlicerOsirixLibModuleWidget()
+qSlicerOsirixROIImporterModuleWidget::~qSlicerOsirixROIImporterModuleWidget()
 {
 }
 
 //-----------------------------------------------------------------------------
-void qSlicerOsirixLibModuleWidget::setup()
+void qSlicerOsirixROIImporterModuleWidget::setup()
 {
-  Q_D(qSlicerOsirixLibModuleWidget);
+  Q_D(qSlicerOsirixROIImporterModuleWidget);
   d->setupUi(this);
   this->Superclass::setup();
 }

@@ -15,19 +15,18 @@
 
 ==============================================================================*/
 
-#ifndef __qSlicerOsirixLibModule_h
-#define __qSlicerOsirixLibModule_h
+#ifndef __qSlicerOsirixROIImporterModule_h
+#define __qSlicerOsirixROIImporterModule_h
 
 // SlicerQt includes
 #include "qSlicerLoadableModule.h"
 
-#include "qSlicerOsirixLibModuleExport.h"
+#include "qSlicerOsirixROIImporterModuleExport.h"
 
-class qSlicerOsirixLibModulePrivate;
+class qSlicerOsirixROIImporterModulePrivate;
 
 /// \ingroup Slicer_QtModules_ExtensionTemplate
-class Q_SLICER_QTMODULES_OSIRIXLIB_EXPORT
-qSlicerOsirixLibModule
+class Q_SLICER_QTMODULES_OSIRIXROIIMPORTER_EXPORT qSlicerOsirixROIImporterModule
   : public qSlicerLoadableModule
 {
   Q_OBJECT
@@ -35,10 +34,11 @@ qSlicerOsirixLibModule
   Q_INTERFACES(qSlicerLoadableModule);
 
 public:
+  virtual bool isHidden() const { return true; }
 
   typedef qSlicerLoadableModule Superclass;
-  explicit qSlicerOsirixLibModule(QObject *parent=0);
-  virtual ~qSlicerOsirixLibModule();
+  explicit qSlicerOsirixROIImporterModule(QObject* parent = 0);
+  virtual ~qSlicerOsirixROIImporterModule();
 
   qSlicerGetTitleMacro(QTMODULE_TITLE);
 
@@ -57,17 +57,17 @@ protected:
   virtual void setup();
 
   /// Create and return the widget representation associated to this module
-  virtual qSlicerAbstractModuleRepresentation * createWidgetRepresentation();
+  virtual qSlicerAbstractModuleRepresentation* createWidgetRepresentation();
 
   /// Create and return the logic associated to this module
   virtual vtkMRMLAbstractLogic* createLogic();
 
 protected:
-  QScopedPointer<qSlicerOsirixLibModulePrivate> d_ptr;
+  QScopedPointer<qSlicerOsirixROIImporterModulePrivate> d_ptr;
 
 private:
-  Q_DECLARE_PRIVATE(qSlicerOsirixLibModule);
-  Q_DISABLE_COPY(qSlicerOsirixLibModule);
+  Q_DECLARE_PRIVATE(qSlicerOsirixROIImporterModule);
+  Q_DISABLE_COPY(qSlicerOsirixROIImporterModule);
 
 };
 

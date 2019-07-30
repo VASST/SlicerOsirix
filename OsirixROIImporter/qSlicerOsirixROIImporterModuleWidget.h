@@ -15,19 +15,19 @@
 
 ==============================================================================*/
 
-#ifndef __qSlicerOsirixLibModuleWidget_h
-#define __qSlicerOsirixLibModuleWidget_h
+#ifndef __qSlicerOsirixROIImporterModuleWidget_h
+#define __qSlicerOsirixROIImporterModuleWidget_h
 
 // SlicerQt includes
 #include "qSlicerAbstractModuleWidget.h"
 
-#include "qSlicerOsirixLibModuleExport.h"
+#include "qSlicerOsirixROIImporterModuleExport.h"
 
-class qSlicerOsirixLibModuleWidgetPrivate;
+class qSlicerOsirixROIImporterModuleWidgetPrivate;
 class vtkMRMLNode;
 
 /// \ingroup Slicer_QtModules_ExtensionTemplate
-class Q_SLICER_QTMODULES_OSIRIXLIB_EXPORT qSlicerOsirixLibModuleWidget :
+class Q_SLICER_QTMODULES_OSIRIXROIIMPORTER_EXPORT qSlicerOsirixROIImporterModuleWidget :
   public qSlicerAbstractModuleWidget
 {
   Q_OBJECT
@@ -35,20 +35,20 @@ class Q_SLICER_QTMODULES_OSIRIXLIB_EXPORT qSlicerOsirixLibModuleWidget :
 public:
 
   typedef qSlicerAbstractModuleWidget Superclass;
-  qSlicerOsirixLibModuleWidget(QWidget *parent=0);
-  virtual ~qSlicerOsirixLibModuleWidget();
+  qSlicerOsirixROIImporterModuleWidget(QWidget* parent = 0);
+  virtual ~qSlicerOsirixROIImporterModuleWidget();
 
 public slots:
 
 
 protected:
-  QScopedPointer<qSlicerOsirixLibModuleWidgetPrivate> d_ptr;
+  QScopedPointer<qSlicerOsirixROIImporterModuleWidgetPrivate> d_ptr;
 
   virtual void setup();
 
 private:
-  Q_DECLARE_PRIVATE(qSlicerOsirixLibModuleWidget);
-  Q_DISABLE_COPY(qSlicerOsirixLibModuleWidget);
+  Q_DECLARE_PRIVATE(qSlicerOsirixROIImporterModuleWidget);
+  Q_DISABLE_COPY(qSlicerOsirixROIImporterModuleWidget);
 };
 
 #endif
