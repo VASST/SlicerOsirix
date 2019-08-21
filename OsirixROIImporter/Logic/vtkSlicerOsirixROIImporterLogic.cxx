@@ -15,7 +15,7 @@
 
 ==============================================================================*/
 
-// OsirixLib Logic includes
+// OsirixROIImporter Logic includes
 #include "vtkSlicerOsirixROIImporterLogic.h"
 
 // MRML includes
@@ -29,11 +29,15 @@
 // STD includes
 #include <cassert>
 
+// JsonCpp includes
+#include <json/json.h>
+
 //----------------------------------------------------------------------------
 vtkStandardNewMacro(vtkSlicerOsirixROIImporterLogic);
 
 //----------------------------------------------------------------------------
 vtkSlicerOsirixROIImporterLogic::vtkSlicerOsirixROIImporterLogic()
+  : vtkSlicerModuleLogic()
 {
 }
 
@@ -46,6 +50,36 @@ vtkSlicerOsirixROIImporterLogic::~vtkSlicerOsirixROIImporterLogic()
 void vtkSlicerOsirixROIImporterLogic::PrintSelf(ostream& os, vtkIndent indent)
 {
   this->Superclass::PrintSelf(os, indent);
+}
+
+//----------------------------------------------------------------------------
+vtkPolyData* vtkSlicerOsirixROIImporterLogic::LoadContoursFromJSON(const std::string& filename)
+{
+  std::ifstream input(filename);
+  if (!input.is_open())
+  {
+    return nullptr;
+  }
+
+  Json::Value root;
+  Json::Reader reader;
+  bool parsingSuccessful = reader.parse(input, root);
+  if (!parsingSuccessful)
+  {
+    // Report the failure and their locations in the document.
+    vtkErrorMacro("Failed to parse configuration: " << filename << "\n" << reader.getFormattedErrorMessages());
+    return nullptr;
+  }
+
+  for (Json::Value::ArrayIndex i = 0; i != root.size(); ++i)
+  {
+    Json::Int val = root[i]["DataSummary"]["Max"].asInt();
+    vtkDebugMacro("" << val);
+  }
+
+  vtkPolyData* polyData = vtkPolyData::New();
+
+  return polyData;
 }
 
 //---------------------------------------------------------------------------

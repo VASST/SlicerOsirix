@@ -27,11 +27,13 @@
 // Slicer includes
 #include "vtkSlicerModuleLogic.h"
 
-// MRML includes
+// VTK includes
+#include <vtkPolyData.h>
 
-// STD includes
+// OS includes
 #include <cstdlib>
 
+// Local includes
 #include "vtkSlicerOsirixROIImporterModuleLogicExport.h"
 
 
@@ -40,10 +42,11 @@ class VTK_SLICER_OSIRIXROIIMPORTER_MODULE_LOGIC_EXPORT vtkSlicerOsirixROIImporte
   public vtkSlicerModuleLogic
 {
 public:
-
   static vtkSlicerOsirixROIImporterLogic* New();
   vtkTypeMacro(vtkSlicerOsirixROIImporterLogic, vtkSlicerModuleLogic);
   void PrintSelf(ostream& os, vtkIndent indent);
+
+  vtkPolyData* LoadContoursFromJSON(const std::string& filename);
 
 protected:
   vtkSlicerOsirixROIImporterLogic();
@@ -55,8 +58,10 @@ protected:
   virtual void UpdateFromMRMLScene();
   virtual void OnMRMLSceneNodeAdded(vtkMRMLNode* node);
   virtual void OnMRMLSceneNodeRemoved(vtkMRMLNode* node);
-private:
 
+protected:
+
+private:
   vtkSlicerOsirixROIImporterLogic(const vtkSlicerOsirixROIImporterLogic&); // Not implemented
   void operator=(const vtkSlicerOsirixROIImporterLogic&); // Not implemented
 };
